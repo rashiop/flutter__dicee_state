@@ -16,22 +16,37 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
+  int leftDiceNumber = 5;
+
   @override
   Widget build(BuildContext context) {
+    leftDiceNumber = 2;
+
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Image.asset('images/dice1.png'),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                print('Left dice rolled');
+              },
+              child: Image.asset(
+                'images/dice$leftDiceNumber.png',
+              ),
             ),
-            SizedBox(width: 20.0),
-            Expanded(
-              child: Image.asset('images/dice2.png'),
+          ),
+          SizedBox(width: 20.0),
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                print('Right dice rolled');
+              },
+              child: Image.asset(
+                'images/dice2.png',
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
