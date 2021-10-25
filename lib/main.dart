@@ -40,6 +40,7 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   leftDiceNumber = rollDice();
+                  rightDiceNumber = rollDice();
                 });
               },
               child: Image.asset(
@@ -52,6 +53,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
+                  leftDiceNumber = rollDice();
                   rightDiceNumber = rollDice();
                 });
               },
